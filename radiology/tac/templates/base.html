@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block title %}<title>Radiology</title>{% endblock %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">Radiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{% url 'index' %}">Index <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+      </div>
+    </div>
+</nav>
+
+
+
+<body>
+    <div class="container" id = "main-container">
+        <div class="row">
+            <div class="col">      
+                <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+                    <ul data-spy="affix" data-offset-top="120" id="affix" class="nav nav-stacked">
+                      <a class="nav-item nav-link active" href="{% url 'upload' %}">Import <span class="sr-only">(current)</span></a>
+                      <a class="nav-item nav-link" href="{% url 'features' %}">Features</a>
+                      <a class="nav-item nav-link" href="{% url 'results' %}">Results</a>
+                    </ul>
+                </div>
+          
+              </div>
+            
+
+            <div class="col-10">
+                {% block content%}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    
+    <footer class="text-center text-dark">
+        <!-- Grid container -->
+        <div class="container pt-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+      
+            <!-- Linkedin -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <!-- Github -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-white m-1"
+              href="https://github.com/Chri1629/radiology_app.git"
+              role="button"
+              data-mdb-ripple-color="white"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center text-white p-3" style="background-color: rgb(32, 31, 27);">
+          © 2020 Copyright:
+          <a class="text-white" href="{% url 'home' %}">radiology-app.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+</body>
+
+</html>

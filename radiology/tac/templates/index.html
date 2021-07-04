@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <p>Prova inserimento immagine</p>
+
+  <form method="POST" class="post-form" enctype="multipart/form-data">  
+            {% csrf_token %} 
+            {{ form.as_p }}   
+            <button type="submit" class="save btn btn-default"> Save </button>  
+  </form>  
+
+  <p> {{PATH}} </p>
+  <h1>SONO DENTRO</h1>
+  <img src=" {{STATIC_URL}} /upload/ {{variables.name}} " alt="">
+  
+{% endblock %}
